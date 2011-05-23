@@ -10,5 +10,14 @@
   var domain = document.domain;
   var url = 'https://' + domain + '/admin/orders/export?created_at_max=' + max_date + '&created_at_min=' + min_date;
   window.open(url); })();">Export Yesterday's Orders</a>
+<a href="javascript:(function(){
+  var d = new Date();
+  d.setDate(d.getDate()-1);
+  var max_date = d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
+  d.setDate(d.getDate()-3)
+  var min_date = d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
+  var domain = document.domain;
+  var url = 'https://' + domain + '/admin/orders/export?created_at_max=' + max_date + '&created_at_min=' + min_date;
+  window.open(url); })();">Export Last 3 Days' Orders</a>
 </body>
 </html>
